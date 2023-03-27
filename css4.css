@@ -11,6 +11,17 @@ button {
     padding: 0;
 }
 
+/* button 초기화 */
+button{
+    border: 0;
+}
+/* 이미지 초기화 */
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
 h1,
 h2,
 h3,
@@ -26,6 +37,12 @@ h6 {
 ul,
 li {
     list-style: none;
+}
+
+a{
+    text-decoration: none;
+    /* 색상 초기화 */
+    color:inherit;
 }
 
 /* main */
@@ -49,9 +66,9 @@ li {
 /* pink, purple */
 .section{
     width: 1080px;
+    /* height: 100vh; */
     height: 100vh;
     margin: 0 auto;
-    box-shadow: inset 0 0 10px red;
     display: flex;
     flex-direction: column;
 }
@@ -62,42 +79,43 @@ li {
     margin-bottom: 100px;
     align-items: center;
     justify-content: space-evenly;
-    border:1px solid black;
 }
 
 .section .nav.pink h1{
     width: 33%;
-    box-shadow: inset 0 0 10px blue;
     font-size: 40px;
+    color:salmon;
 }
 
 .section .nav.purple h1 {
     width: 26%;
-    box-shadow: inset 0 0 10px blue;
     font-size: 40px;
 }
 .section .nav .line {
-	width: 10%;
+	width: 12%;
 	border-top: 1px solid #bd8fe8;
 }
 
 .section .nav button {
-    width: 16%;
-    padding:10px;
+    padding:15px 20px;
     margin-left: auto;
-    background: red;
+    background: orangered;
     color:white;
+    font-size: 14px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow:inset 0 -0.3rem darkred;
 }
 .section .nav.purple p {
 	width: 60%;
 	margin-left: auto;
+    color:#bd8fe8;
 }
 
 /*  */
 .content{
-    border: 2px solid green;
     display: flex;
-    flex-grow: 1;
+    justify-content: space-between;
     gap:24px;
 }
 
@@ -105,16 +123,18 @@ li {
     flex-direction: column;
 }
 .content .card {
-	flex-grow: 1;
+	/* flex-grow: 1; */
 	display: flex;
 	/* min-height:0을 줌으로써 컨테이너안에 유지 */
 	/* min-height: 200px; */
-    box-shadow: inset 0 0 10px royalblue;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    background: white;
 }
 .content .card.pink{
     flex-direction: column;
-    width: 30%;
+    width: 33%;
 }
+
 .card.second {
 	flex-direction: row-reverse;
 }
@@ -128,9 +148,7 @@ li {
 .card.pink .wrap{
     height:26%;
 }
-/* .card:not(:last-child){
-	margin-bottom: 24px;
-} */
+
 .pink.sold{
     position: relative;
 }
@@ -163,22 +181,120 @@ li {
 	color: white;
 	font-size: 30px;
 }
-/* menu: margin-top:24px, margin-left:24px */
-/* p padding: 32px 0  24px, border: bottom*/
+
 .menu{
     margin-top:24px;
     margin-left: 24px;
 }
-.menu span{
+.menu .btn button{
     display: inline-block;
-    border:1px solid purple;
+    color:#673399;
+    background: #f1e0f8;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    padding:5px;
     margin-bottom: 24px;
 }
 .menu h2{
-    margin-bottom: 24px;
+    font-size: 24px;
+    /* margin-bottom: 24px; */
     font-weight: 700;
 }
+.menu .h2{
+    margin-right: 24px;
+    margin-bottom: 32px;
+    height: 60px;
+}
 .menu p{
-    padding-bottom: 24px;
-    border-bottom: 1px solid gray;
+    color:gray;
+    font-weight: 500;
+    height:200px;
+    margin-right: 24px;
+    line-height: 24px;
+}
+.menu h3{
+    font-size: 12px;
+    height: 68px;
+    margin-top:24px;
+    color:gray;
+    border-top:3px solid #eee;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.menu .link{
+    font-size: 12px;
+    height: 68px;
+    margin-top:24px;
+    color:gray;
+    border-top:3px solid #eee;
+    display: flex;
+    align-items: center;
+}
+.menu .link .img{
+    display: flex;
+    justify-content: center;
+    width: 90px;
+    height: 30px;
+    padding-right: 24px;
+    margin-left: auto;
+    position: relative;
+}
+.menu .link img{
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-sizing: border-box;
+}
+.menu .link .img1{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.menu .link .img2{
+    position: absolute;
+    top:0;
+    left: 25px;
+    z-index: 1;
+}
+.menu .link .img3{
+    position: absolute;
+    top:0;
+    left: 50px;
+    z-index: 2;
+}
+
+/* style------ */
+.section .purple h1{
+    color:white;
+}
+.purple strong {
+	box-shadow: inset 0 -0.5em orangered;
+}
+
+.purple .ul h2{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    color:#673399;
+
+}
+.purple .ul li::before{
+    content:' ';
+    background-color: #bd8fe8;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.purple .ul li{
+    text-indent: -20px;
+    padding-left:20px;
+    line-height: 32px;
 }
